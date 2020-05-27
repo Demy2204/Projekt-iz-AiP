@@ -1,15 +1,17 @@
 #include <iostream>
 #include <stdio.h>
+#include <fstream>
 
 using namespace std;
 
 int main()
 {
-    //osnovni kod
-    //napravit random da sve valute mjenjaju vrijednost svakih x vremena
-    //kad se pretvaraju vracat u kune pa u drugu valutu?
-    //mjenjat te vrijednosti sa temp?
-    //u binarnu datoteku kolicinu prebacenih novaca?
+    const double EuroTecaj = 7.5741;
+    const double DolarTecaj = 6.9088;
+    const double MarkaTecaj = 3.8726;
+    const double FuntaTecaj = 8.5074;
+    const double CeskaKrunaTecaj = 0.2795;
+    const double ForinteTecaj = 2.1675;
 
     int izbor;
     while(1)
@@ -25,6 +27,12 @@ int main()
         if(izbor == 1)
             {
              //ispisat tecajnu listu
+            ifstream datoteka;
+               string redak;
+               datoteka.open("Tecajna lista.txt");
+               getline(datoteka, redak);
+               cout << redak << endl;
+               datoteka.close();
             //pitat onda za valute
             }
          else if(izbor == 2)
@@ -40,7 +48,8 @@ int main()
          {
              cout << "Krivi unos, unesite broj ponovno" << endl;
          }
-
+        cout << endl;
+        system("pause");
     }
 
     return 0;
